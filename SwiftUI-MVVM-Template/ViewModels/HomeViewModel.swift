@@ -15,7 +15,7 @@ extension HomeView {
         @Published private(set) var items: [Item] = []
         
         private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        
+        	
         // MARK: - ViewModelProtocol methods
         func loadData() {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Item.entity().name!)
@@ -52,3 +52,9 @@ extension HomeView {
 
 
 
+
+struct HomeViewModel_Previews: PreviewProvider {
+    static var previews: some View {
+        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+    }
+}
