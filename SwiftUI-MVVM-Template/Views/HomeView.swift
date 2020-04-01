@@ -15,26 +15,37 @@ struct HomeView: View {
     var body: some View {
         
         NavigationView {
-            // YOUR CONTENT HERE
-            List(viewModel.items, id: \.id) { item in
-                NavigationLink(destination: DetailsView(item: item), label: {
-                    Text("Item #\(item.value)")
-                })
+            VStack {
+                List(viewModel.items, id: \.id) { item in
+                    HStack {
+                        Image(systemName: "\(item.value).circle")
+                            .imageScale(.large)
+                            .padding(.trailing, 20)
+                            .foregroundColor(.green)
+                        
+                        NavigationLink(destination: DetailsView(item: item), label: {
+                            Text("Item #\(item.value)")
+                        })
+                    }
+                }
             }
+            .animation(.linear)
             .navigationViewStyle(StackNavigationViewStyle())
             .navigationBarTitle(Text("Home view"))
         }
         .onAppear() {
             self.viewModel.loadData()
             
+            /// For test purpose, we create an update of the row #5 after 5 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
-                #warning("Test purpose, simulating an update after 5 seconds")
                 // Please note that since we are using a class object (Item) as @Published,
                 // we need to call objectWillChange.send() to emit the reference change.
-                // If you use a struct object for Item, you will not need 
-                self.viewModel.objectWillChange.send()
-                
-                self.viewModel.items[5].value = Int32(123121)
+                // If you use a struct object for Item, you will not need
+                withAnimation {
+                    print("Auto-update after 5 seconds just occured.")
+                    self.viewModel.objectWillChange.send()
+                    self.viewModel.items[5].value = Int32(50)
+                }
             })
         }
     }

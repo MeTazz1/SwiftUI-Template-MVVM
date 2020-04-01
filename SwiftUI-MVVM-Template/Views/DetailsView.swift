@@ -8,9 +8,10 @@
 
 import SwiftUI
 
+/// Item DetailsView
 struct DetailsView: View {
     
-    // MARK: - The Details's observed object. Changes will change the view's state
+    /// Details's observed object. Changes will update the view's state
     @ObservedObject var item: Item
     
     var body: some View {

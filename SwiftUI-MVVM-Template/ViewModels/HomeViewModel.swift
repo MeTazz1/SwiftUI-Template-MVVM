@@ -11,12 +11,18 @@ import CoreData
 
 extension HomeView {
     
+    /// HomeView-ViewModel
     class ViewModel: ObservableObject, ViewModelProtocol {
+        
+        /// List of items to display
         @Published private(set) var items: [Item] = []
         
+        /// Core Data Store context
         private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
         	
         // MARK: - ViewModelProtocol methods
+        
+        /// Loading data from local Core Data Store
         func loadData() {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Item.entity().name!)
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "value", ascending: true)]
@@ -26,8 +32,9 @@ extension HomeView {
                 if let coreDataItems = coreDataItems {
                     if coreDataItems.count != 0 { items = coreDataItems }
                     else {
-                        #warning("Test only")
+                        #if debug
                         self.populateData()
+                        #endif
                     }
                 }
             }
@@ -36,6 +43,7 @@ extension HomeView {
             }
         }
         
+        /// For test purpose, we generate data
         func populateData() {
             for i in 0 ... 10 {
                 let newItem = Item(context: context)

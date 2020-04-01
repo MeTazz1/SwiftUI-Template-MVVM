@@ -8,11 +8,11 @@
 
 import Foundation
 
-// This extends the CoreData Managed Object
-// Use this to add any custom methods or computed properties to the Item object
+/// This extends the CoreData Managed Object
+/// Use this to add any custom methods or computed properties to the Item object
 extension Item {
     
-    // MARK: - Example of custom method
+    /// Example of custom method
     func printItem() {
         if let id = self.id {
             print("--- #\(id.uuidString)")
@@ -21,7 +21,7 @@ extension Item {
         }
     }
     
-    // MARK: - Example of computed method
+    /// Example of computed method
     var isValueLowerThanFive: Bool {
         return value < 5
     }
