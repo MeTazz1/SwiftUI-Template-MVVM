@@ -2,7 +2,7 @@
 > A ready-to-use SwiftUI MVVM template to use when creating a new project, including Core Data and standard App Configuration 
 
 
-This template is intended to reduce the amount of takes to create and setup a new project with SwiftUI. 
+This template is intended to reduce the amount of time it takes to create and setup a new project with SwiftUI. 
 
 It includes a sample project that contains:
 * MVVM Design Architecture (Model - View - ViewModel) with a subfolder for each category,
