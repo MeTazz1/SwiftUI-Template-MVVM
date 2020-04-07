@@ -1,5 +1,5 @@
 # SwiftUI-Template-MVVM 
-> A ready-to-use SwiftUI Clean MVVM template to use when creating a new project, including Core Data, Generic type of data source for your ViewModels, a customizable ViewModelDataSource protocol and a standard App Configuration .
+> A ready-to-use SwiftUI Clean MVVM template to use when creating a new project including Core Data, a generic type of data source for your ViewModels, a customizable ViewModelDataSource protocol and a standard App Configuration.
 
 
 This template is intended to reduce the amount of time it takes to create and setup a new project with SwiftUI. 
