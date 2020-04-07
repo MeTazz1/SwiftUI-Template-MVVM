@@ -1,17 +1,18 @@
 # SwiftUI-Template-MVVM 
-> A ready-to-use SwiftUI MVVM template to use when creating a new project, including Core Data and standard App Configuration 
+> A ready-to-use SwiftUI Clean MVVM template to use when creating a new project, including Core Data, Generic type of data source for your ViewModels, a customizable ViewModelDataSource protocol and a standard App Configuration .
 
 
 This template is intended to reduce the amount of time it takes to create and setup a new project with SwiftUI. 
 
 It includes a sample project that contains:
-* MVVM Design Architecture (Model - View - ViewModel) with a subfolder for each category,
+* A clean MVVM Design Architecture (Model - View - ViewModel) with a subfolder for each category,
+* Ready-to-go generic superclass to handle every type of data source used in your views,
 * CoreData setup,
-  * an example Item and its extension for custom methods and computer properties,
-* Sample views using Core Data objects as ObservedObject, in a List
+  * an example Item and its extension for custom methods and computed properties,
+* Sample views using Core Data objects as data source, in a List and Detail View
   * HomeView
   * DetailsView
-* Tests, 
+* Tests cases, 
 
 Feel free to clone this template and to reuse it!
 
@@ -30,6 +31,10 @@ Then, rename the project as you wish and start having fun! You can leave it as i
 
 
 ## Release History
+* 1.1.0
+    * Implementation of a generic type for your view's data source 
+    * Creation of a ViewModelDataSource protocol for your ViewModels
+    * Better XCT test cases 
 
 * 1.0.0
     * The first proper release
