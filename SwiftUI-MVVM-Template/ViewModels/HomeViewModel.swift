@@ -12,35 +12,18 @@ import CoreData
 extension HomeView {
     
     /// HomeView-ViewModel
-    class ViewModel: ObservableObject, ViewModelProtocol {
-        
-        /// List of items to display
-        @Published private(set) var items: [Item] = []
+    class ViewModel: ObservableViewModel<Item>{
         
         /// Core Data Store context
         private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-        	
-        // MARK: - ViewModelProtocol methods
         
-        /// Loading data from local Core Data Store
-        func loadData() {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Item.entity().name!)
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "value", ascending: true)]
-            
-            do {
-                let coreDataItems = try context.fetch(fetchRequest) as? [Item]
-                if let coreDataItems = coreDataItems {
-                    if coreDataItems.count != 0 { items = coreDataItems }
-                    else {
-                        #if debug
-                        self.populateData()
-                        #endif
-                    }
-                }
-            }
-            catch {
-                print("Error: Couldn't load [Item] from Core Data Store")
-            }
+        init() {
+            super.init(dataSource: [Item]())
+        }
+        
+        /// OS cleaning memory
+        deinit {
+            self.deinitData()
         }
         
         /// For test purpose, we generate data
@@ -52,17 +35,36 @@ extension HomeView {
                 newItem.printItem()
             }
             try? context.save()
-            self.loadData()
+            self.initData()
         }
     }
 }
 
-
-
-
-
-struct HomeViewModel_Previews: PreviewProvider {
-    static var previews: some View {
-        /*@START_MENU_TOKEN@*/Text("Hello, World!")/*@END_MENU_TOKEN@*/
+extension HomeView.ViewModel: ViewModelDataSource {
+    
+    /// Init the ViewModel data source by reading Core Data stored items
+    func initData() {
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: Item.entity().name!)
+        fetchRequest.sortDescriptors = [NSSortDescriptor(key: "value", ascending: true)]
+        
+        do {
+            let coreDataItems = try context.fetch(fetchRequest) as? [Item]
+            if let coreDataItems = coreDataItems {
+                if coreDataItems.count != 0 { self.dataSource = coreDataItems }
+                else {
+                    #if DEBUG
+                    self.populateData()
+                    #endif
+                }
+            }
+        }
+        catch {
+            print("Error: Couldn't load [Item] from Core Data Store")
+        }
+    }
+    
+    /// Unload and deinit ViewModelDataSource
+    func deinitData() {
+        self.dataSource.removeAll()
     }
 }

@@ -16,7 +16,7 @@ struct HomeView: View {
         
         NavigationView {
             VStack {
-                List(viewModel.items, id: \.id) { item in
+                List(self.viewModel.dataSource, id: \.id) { item in
                     HStack {
                         Image(systemName: "\(item.value).circle")
                             .imageScale(.large)
@@ -34,17 +34,16 @@ struct HomeView: View {
             .navigationBarTitle(Text("Home view"))
         }
         .onAppear() {
-            self.viewModel.loadData()
+            self.viewModel.initData()
             
             /// For test purpose, we create an update of the row #5 after 5 seconds
             DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
                 // Please note that since we are using a class object (Item) as @Published,
                 // we need to call objectWillChange.send() to emit the reference change.
-                // If you use a struct object for Item, you will not need
                 withAnimation {
-                    print("Auto-update after 5 seconds just occured.")
+                    print("Forcing an auto-update after 5 seconds for test purposes.")
                     self.viewModel.objectWillChange.send()
-                    self.viewModel.items[5].value = Int32(50)
+                    self.viewModel.dataSource[5].value = Int32(50)
                 }
             })
         }

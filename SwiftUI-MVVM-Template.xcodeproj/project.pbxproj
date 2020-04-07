@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		61269AB0243C17ED005B5E13 /* ViewModelDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61269AAF243C17ED005B5E13 /* ViewModelDataSource.swift */; };
+		61269AB2243C1822005B5E13 /* ObservableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61269AB1243C1822005B5E13 /* ObservableViewModel.swift */; };
 		83676E01242D9701005B108D /* SwiftUI_MVVM_Template.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 83676DFF242D9701005B108D /* SwiftUI_MVVM_Template.xcdatamodeld */; };
 		83676E05242D9702005B108D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83676E04242D9702005B108D /* Assets.xcassets */; };
 		83676E08242D9702005B108D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 83676E07242D9702005B108D /* Preview Assets.xcassets */; };
 		83676E0B242D9702005B108D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 83676E09242D9702005B108D /* LaunchScreen.storyboard */; };
 		83676E16242D9702005B108D /* SwiftUI_MVVM_TemplateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83676E15242D9702005B108D /* SwiftUI_MVVM_TemplateTests.swift */; };
 		83676E21242D9702005B108D /* SwiftUI_MVVM_TemplateUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83676E20242D9702005B108D /* SwiftUI_MVVM_TemplateUITests.swift */; };
-		83676E30242D9727005B108D /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83676E2F242D9727005B108D /* ViewModelProtocol.swift */; };
 		83676E38242D9730005B108D /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83676E32242D9730005B108D /* Item.swift */; };
 		83676E39242D9730005B108D /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83676E34242D9730005B108D /* HomeViewModel.swift */; };
 		83676E3A242D9730005B108D /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83676E36242D9730005B108D /* DetailsView.swift */; };
@@ -40,6 +41,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		61269AAF243C17ED005B5E13 /* ViewModelDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelDataSource.swift; sourceTree = "<group>"; };
+		61269AB1243C1822005B5E13 /* ObservableViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ObservableViewModel.swift; sourceTree = "<group>"; };
 		83676DF8242D9701005B108D /* SwiftUI-MVVM-Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI-MVVM-Template.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83676E00242D9701005B108D /* SwiftUI_MVVM_Template.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SwiftUI_MVVM_Template.xcdatamodel; sourceTree = "<group>"; };
 		83676E04242D9702005B108D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -52,7 +55,6 @@
 		83676E1C242D9702005B108D /* SwiftUI-MVVM-TemplateUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SwiftUI-MVVM-TemplateUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		83676E20242D9702005B108D /* SwiftUI_MVVM_TemplateUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_MVVM_TemplateUITests.swift; sourceTree = "<group>"; };
 		83676E22242D9702005B108D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		83676E2F242D9727005B108D /* ViewModelProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		83676E32242D9730005B108D /* Item.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		83676E34242D9730005B108D /* HomeViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		83676E36242D9730005B108D /* DetailsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
@@ -109,8 +111,8 @@
 		83676DFA242D9701005B108D /* SwiftUI-MVVM-Template */ = {
 			isa = PBXGroup;
 			children = (
-				83676E2E242D9727005B108D /* Protocols */,
 				83676E31242D9730005B108D /* Models */,
+				83676E2E242D9727005B108D /* Protocols */,
 				83676E33242D9730005B108D /* ViewModels */,
 				83676E35242D9730005B108D /* Views */,
 				83676E04242D9702005B108D /* Assets.xcassets */,
@@ -152,7 +154,7 @@
 		83676E2E242D9727005B108D /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
-				83676E2F242D9727005B108D /* ViewModelProtocol.swift */,
+				61269AAF243C17ED005B5E13 /* ViewModelDataSource.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -168,6 +170,7 @@
 		83676E33242D9730005B108D /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				61269AB1243C1822005B5E13 /* ObservableViewModel.swift */,
 				83676E34242D9730005B108D /* HomeViewModel.swift */,
 			);
 			path = ViewModels;
@@ -323,13 +326,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				83676E3B242D9730005B108D /* HomeView.swift in Sources */,
-				83676E30242D9727005B108D /* ViewModelProtocol.swift in Sources */,
 				83676E39242D9730005B108D /* HomeViewModel.swift in Sources */,
 				83676E01242D9701005B108D /* SwiftUI_MVVM_Template.xcdatamodeld in Sources */,
+				61269AB0243C17ED005B5E13 /* ViewModelDataSource.swift in Sources */,
 				83676E3A242D9730005B108D /* DetailsView.swift in Sources */,
 				83676E40242D9744005B108D /* SceneDelegate.swift in Sources */,
 				83676E38242D9730005B108D /* Item.swift in Sources */,
 				83676E3F242D9744005B108D /* AppDelegate.swift in Sources */,
+				61269AB2243C1822005B5E13 /* ObservableViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -426,7 +430,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -480,7 +484,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -499,10 +503,12 @@
 				DEVELOPMENT_TEAM = JQ8JMZKS3W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-MVVM-Template/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cd.SwiftUI-MVVM-Template";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -519,10 +525,12 @@
 				DEVELOPMENT_TEAM = JQ8JMZKS3W;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "SwiftUI-MVVM-Template/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.cd.SwiftUI-MVVM-Template";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -17,14 +17,16 @@ class SwiftUI_MVVM_TemplateTests: XCTestCase {
 
     func test_HomeViewModelData() {
         let homeViewModel = HomeView.ViewModel()
-        homeViewModel.loadData()
-        XCTAssertTrue(homeViewModel.items.count > 0)
         
-        if homeViewModel.items.count == 0 {
-            homeViewModel.populateData()
-            XCTAssertTrue(homeViewModel.items.count > 0)
-        }
+        XCTAssertNotNil(homeViewModel)
+        XCTAssertEqual(homeViewModel.dataSource.count, 0)
         
+        homeViewModel.initData()
+        XCTAssertTrue(homeViewModel.dataSource.count > 0)
+        
+        homeViewModel.deinitData()
+        XCTAssertTrue(homeViewModel.dataSource.count == 0)
+
     }
 
 }
